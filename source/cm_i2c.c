@@ -1,9 +1,9 @@
 // Functions that directly control the hardware
 
-#include "CM_LIB.H"
-#include "CM_I2C.H"
-#include "CM_I2C_L.H"
-#include "CW_Encry.h"
+#include "cm_lib.h"
+#include "cm_i2c.h"
+#include "cm_i2c_l.h"
+#include "cw_encry.h"
 // 1/2 Clock Cycle transition to HIGH
 //
 void cm_Clockhigh(void)

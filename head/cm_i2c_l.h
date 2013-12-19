@@ -14,8 +14,8 @@
 // Other includes required by this header file
 // -------------------------------------------------------------------------------------------------
 
-#include "CM_LIB.H"
-#include "CM_I2C.H"
+#include "cm_lib.h"
+// #include "cm_i2c.h"
 
 // Constants used in low level functions
 // Power on clocks (spec call for 5, but California Card uses 15)
@@ -29,16 +29,16 @@ uchar cm_WriteCommand(puchar pucInsBuff, puchar pucSendVal, uchar ucLen);
 uchar cm_WriteCommand_NW(puchar pucInsBuff, puchar pucSendVal, uchar ucLen);
 
 // Functions in CM_I2C.C used internally by other low level functions
-void cm_Clockhigh(void);
-void cm_Clocklow(void);
-void cm_ClockCycle(void);
+// void cm_Clockhigh(void);
+// void cm_Clocklow(void);
+// void cm_ClockCycle(void);
 void cm_ClockCycles(uchar ucCount);
-void cm_Start(void);
+// void cm_Start(void);
 void cm_Stop(void);
-uchar cm_Write(uchar ucData);
-void cm_Ack(void);
-void cm_N_Ack(void);
-uchar cm_Read(void);
+// uchar cm_Write(uchar ucData);
+// void cm_Ack(void);
+// void cm_N_Ack(void);
+// uchar cm_Read(void);
 void cm_WaitClock(uchar loop);
 uchar cm_SendCommand(puchar pucInsBuff);
 uchar cm_ReceiveRet(puchar pucRecBuf, uchar ucLen);

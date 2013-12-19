@@ -3,9 +3,8 @@
 // Note: this module must be after all other low level functions in the library
 //       to assure that any reference to functions in this library are satistified.
 
-#include "CM_LIB.H"
-#include "CM_I2C.H"
-#include "CM_I2C_L.H"
+#include "cm_lib.h"
+#include <linux/delay.h>
 
 // Zone Data
 uchar ucCM_UserZone;
@@ -21,6 +20,7 @@ uchar ucCM_InsBuff[4];
 // Delay
 void cm_Delay(uchar ucDelay)
 {
+#if 0
 	//uchar ucTimer;
 	uint ucTimer; 
 	
@@ -28,6 +28,8 @@ void cm_Delay(uchar ucDelay)
     	ucTimer = CM_TIMER;
         while(ucTimer) ucTimer--;
     	ucDelay--;
-    }	
+    }
+#endif
+	udelay(1);    
 }
 

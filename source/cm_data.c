@@ -1,6 +1,6 @@
 // Data and Configuration for the CryptoMemory Library
-#include "CM_LIB.H"
-#include "CM_I2C.H"
+#include "cm_lib.h"
+#include "cw_low.h"
 
 // Data Structures that configure the low level CryptoMemory functions
 

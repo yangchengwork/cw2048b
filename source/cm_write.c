@@ -4,8 +4,8 @@
 //       before all high level user function to assure that any reference to
 //       this function in this library are satistified.
 
-#include "CM_LIB.H"
-#include "CM_I2C.H"
+#include "cm_lib.h"
+#include "cw_low.h"
 
 uchar cm_WriteCommand(puchar pucInsBuff, puchar pucSendVal, uchar ucLen)
 { 

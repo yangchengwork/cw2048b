@@ -2,9 +2,9 @@
 //
 
 // CryptoMemory Library Include Files
-#include "CM_I2C.H"
-#include "CM_LIB.H"
-#include "CM_GPA.H"
+#include "cm_lib.h"
+#include "cw_low.h"
+
 #ifndef  SUCCESS
 	#define  SUCCESS 1
 #endif
@@ -18,17 +18,9 @@ uchar cm_SetUserZone(uchar ucZoneNumber, uchar ucAntiTearing)
 	else 	           ucCM_InsBuff[1] = 0x03;
     ucCM_InsBuff[2] = ucZoneNumber;
 	ucCM_InsBuff[3] = 0x00;
-
-    // Only zone number is included in the polynomial
-	cm_GPAGen(ucZoneNumber);
-	
 	if ((ucReturn = CM_LOW_LEVEL.SendCommand(ucCM_InsBuff))!= SUCCESS) return ucReturn;
 	cm_Stop();
 	// save zone number and anti-tearing state
     ucCM_UserZone = ucZoneNumber;
-    ucCM_AntiTearing = ucAntiTearing;
-
-    // done	
-	//return  CM_LOW_LEVEL.ReceiveRet(NULL,0);
 	return	ucReturn;
 }

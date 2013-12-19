@@ -1,7 +1,7 @@
 // Function return TRUE
 //
 
-#include "CM_LIB.H"
+#include "cm_lib.h"
 
 uchar cm_TRUE(void)
 {

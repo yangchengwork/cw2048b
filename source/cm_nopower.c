@@ -1,23 +1,16 @@
 // Functions control the logical power on/off for the chip
 
-#include "CM_LIB.H"
-#include "CM_I2C.H"
-#include "CM_I2C_L.H"
-#include "CM_GPA.H"
+#include "cm_lib.h"
+#include "cw_low.h"
 
 // Power On Chip  
-//
-// Returns 0 (SUCCESS) if no error
 //
 void cm_PowerOn(void)   
 {
 	// Reset chip data
-	cm_ResetCrypto();
     ucCM_UserZone = ucCM_AntiTearing = 0;
     
     // Sequence for powering on secure memory according to ATMEL spec
-//    CM_DATA_OUT;                              // SDA and SCL start as outputs
-//	CM_CLK_OUT;
     SCL_L;                                // Clock should start LOW
     SDA_H;                               // Data high during reset
     cm_ClockCycles(CM_PWRON_CLKS);            // Give chip some clocks cycles to get started
